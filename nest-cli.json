@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/nestjs-tsoa-integration/src",
+  "monorepo": true,
+  "root": "apps/nestjs-tsoa-integration",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs-tsoa-integration/tsconfig.app.json"
+  },
+  "projects": {
+    "nestjs-tsoa-integration": {
+      "type": "application",
+      "root": "apps/nestjs-tsoa-integration",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs-tsoa-integration/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestjs-tsoa-integration/tsconfig.app.json"
+      }
+    },
+    "dogs": {
+      "type": "application",
+      "root": "apps/dogs",
+      "entryFile": "main",
+      "sourceRoot": "apps/dogs/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/dogs/tsconfig.app.json"
+      }
+    },
+    "cats": {
+      "type": "application",
+      "root": "apps/cats",
+      "entryFile": "main",
+      "sourceRoot": "apps/cats/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cats/tsconfig.app.json"
+      }
+    }
+  }
+}
