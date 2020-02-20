@@ -1,8 +1,10 @@
-import {Controller, Get, Param, Post} from '@nestjs/common';
+import {Controller, Get, Param, Post, Body} from '@nestjs/common';
 import { AppService } from './app.service';
 import {ICat} from "./cat.interface";
+import {Route} from "tsoa";
 
 @Controller('cats')
+@Route('cats')
 export class CatsController {
   constructor(private readonly appService: AppService) {}
 
@@ -12,7 +14,7 @@ export class CatsController {
   }
 
   @Post()
-  addCat(cat: ICat): string{
+  addCat(@Body() cat: ICat): string{
     return cat.name;
   }
 }

@@ -1,8 +1,10 @@
 import {Controller, Get, Param, Put, Query} from '@nestjs/common';
 import { AppService } from './app.service';
 import {IDog} from "./dog.interface";
+import {Route} from "tsoa";
 
 @Controller('/dogs')
+@Route('dogs')
 export class DogsController {
   constructor(private readonly appService: AppService) {}
 
